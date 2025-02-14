@@ -13,7 +13,7 @@ function selectOption(option) {
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by 2x
+        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
         yesButton.style.fontSize = newSize + 'px';
     } else {
         // If neither "Yes" nor "No" was clicked, show an alert message
@@ -49,7 +49,7 @@ function displayCat() {
     // Set alternative text for the image (for accessibility)
     catImage.alt = 'Cat';
     // Set styles to center and adjust size
-    catImage.style.width = '300px'; // Increased size
+    catImage.style.width = '200px';
     catImage.style.display = 'block';
     catImage.style.margin = 'auto';
     
@@ -84,17 +84,16 @@ function displayCatHeart() {
 
         // Create a new paragraph element for the message
         var message = document.createElement('p');
-        message.innerHTML = `
+        message.innerHTML = 
             <strong>WHAT:</strong> Balentayns Deyt (?) hehe <br>
             <strong>WHO:</strong> Just the two of us <br>
             <strong>WHERE:</strong> SM Grand Central, after class, Wednesday or Saturday (tell me when ka free 😊) <br>
             <strong>WHY:</strong> kasi because iloveyou 😉
-        `;
+        ;
         message.style.fontSize = '18px';
-        message.style.textAlign = 'justify'; // Justified text alignment
+        message.style.textAlign = 'center';
         message.style.marginTop = '15px';
-        message.style.padding = '0 20px';
-
+        
         // Append the message below the image
         imageContainer.appendChild(message);
     };
