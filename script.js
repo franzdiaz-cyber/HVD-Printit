@@ -1,5 +1,3 @@
-// script.js
-
 // Function to handle button click events
 function selectOption(option) {
     // Check which option was clicked
@@ -56,7 +54,7 @@ function displayCat() {
     };
 }
 
-// Function to display the cat-heart.gif
+// Function to display the cat-heart.gif along with the text message
 function displayCatHeart() {
     // Clear existing content in the image container
     document.getElementById('image-container').innerHTML = '';
@@ -73,6 +71,21 @@ function displayCatHeart() {
         imageContainer.appendChild(catHeartImage);
         // Hide the options container
         document.getElementById('options').style.display = 'none';
+        
+        // Create a new paragraph element for the message
+        var message = document.createElement('p');
+        message.innerHTML = `
+            <strong>WHAT:</strong> Balentayns Deyt (?) hehe <br>
+            <strong>WHO:</strong> Just the two of us <br>
+            <strong>WHERE:</strong> SM Grand Central, after class, Wednesday or Saturday (tell me when ka free 😊) <br>
+            <strong>WHY:</strong> kasi because iloveyou 😉
+        `;
+        message.style.fontSize = '20px';
+        message.style.textAlign = 'center';
+        message.style.marginTop = '10px';
+        
+        // Append the message below the image
+        imageContainer.appendChild(message);
     };
 }
 
