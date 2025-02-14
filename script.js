@@ -13,7 +13,7 @@ function selectOption(option) {
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
+        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by 2x
         yesButton.style.fontSize = newSize + 'px';
     } else {
         // If neither "Yes" nor "No" was clicked, show an alert message
@@ -40,21 +40,14 @@ function flashRainbowColors(callback) {
 
 // Function to display the cat.gif initially
 function displayCat() {
-    // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the cat
     var catImage = new Image();
-    // Set the source (file path) for the cat image
-    catImage.src = 'cat.gif'; // Assuming the cat image is named "cat.gif"
-    // Set alternative text for the image (for accessibility)
+    catImage.src = 'cat.gif';
     catImage.alt = 'Cat';
-    // Restore original size
-    catImage.style.width = 'auto';
-    catImage.style.maxWidth = '100%';
+    catImage.style.width = '300px'; // Restore original size
     catImage.style.display = 'block';
     catImage.style.margin = 'auto';
     
-    // When the cat image is fully loaded, add it to the image container
     catImage.onload = function() {
         imageContainer.appendChild(catImage);
     };
@@ -62,44 +55,15 @@ function displayCat() {
 
 // Function to display the cat-heart.gif along with the text message
 function displayCatHeart() {
-    // Clear existing content in the image container
-    document.getElementById('image-container').innerHTML = '';
-    // Get the container where the image will be displayed
+    document.getElementById('image-container').innerHTML = ''; // Clear previous content
     var imageContainer = document.getElementById('image-container');
     
-    // Create a new Image element for the cat-heart
+    // Create cat-heart image
     var catHeartImage = new Image();
-    catHeartImage.src = 'cat-heart.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
+    catHeartImage.src = 'cat-heart.gif';
     catHeartImage.alt = 'Cat Heart';
-    
-    // Set styles to make the gif smaller and centered
     catHeartImage.style.width = '150px';
     catHeartImage.style.display = 'block';
     catHeartImage.style.margin = 'auto';
 
-    // When the cat-heart image is fully loaded, add it to the image container
-    catHeartImage.onload = function() {
-        imageContainer.appendChild(catHeartImage);
-        // Hide the options container
-        document.getElementById('options').style.display = 'none';
-
-        // Create a new paragraph element for the message
-        var message = document.createElement('p');
-        message.innerHTML = `
-            <strong>WHAT:</strong> Balentayns Deyt (?) hehe <br>
-            <strong>WHO:</strong> Just the two of us <br>
-            <strong>WHERE:</strong> SM Grand Central, after class, Wednesday or Saturday (tell me when ka free 😊) <br>
-            <strong>WHY:</strong> kasi because iloveyou 😉
-        `;
-        message.style.fontSize = '18px';
-        message.style.textAlign = 'justify'; // Justify the text
-        message.style.margin = '15px auto';
-        message.style.maxWidth = '300px';
-
-        // Append the message below the image
-        imageContainer.appendChild(message);
-    };
-}
-
-// Display the cat.gif initially
-displayCat();
+    // When the cat-heart im
