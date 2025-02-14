@@ -48,8 +48,9 @@ function displayCat() {
     catImage.src = 'cat.gif'; // Assuming the cat image is named "cat.gif"
     // Set alternative text for the image (for accessibility)
     catImage.alt = 'Cat';
-    // Set styles to center and adjust size
-    catImage.style.width = '200px';
+    // Restore original size
+    catImage.style.width = 'auto';
+    catImage.style.maxWidth = '100%';
     catImage.style.display = 'block';
     catImage.style.margin = 'auto';
     
@@ -91,9 +92,10 @@ function displayCatHeart() {
             <strong>WHY:</strong> kasi because iloveyou 😉
         `;
         message.style.fontSize = '18px';
-        message.style.textAlign = 'center';
-        message.style.marginTop = '15px';
-        
+        message.style.textAlign = 'justify'; // Justify the text
+        message.style.margin = '15px auto';
+        message.style.maxWidth = '300px';
+
         // Append the message below the image
         imageContainer.appendChild(message);
     };
